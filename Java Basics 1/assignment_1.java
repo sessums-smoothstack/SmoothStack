@@ -39,9 +39,6 @@ public class assignment_1{
         catch(Exception e){
             System.err.println(e);
         }
-        finally{
-            System.exit(0);
-        }
     }
 
     public static void triangle(String orientation, String alignment){
