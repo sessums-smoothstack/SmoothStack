@@ -7,4 +7,8 @@
 * Java Basics 2
     * Array2D.java
     * Shapes.java
-    * SumDoubles.java 
+    * SumDoubles.java
+* Java_Basics_3
+    * FileAppend.java
+    * LetterSearch.java
+    * ListFiles.java
