@@ -1,4 +1,4 @@
-#SmoothStack
+# SmoothStack
 ### Assignment Repository For Training
 #### Folders include
 * Java Basics 1
