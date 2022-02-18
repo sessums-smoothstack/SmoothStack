@@ -1,4 +1,4 @@
-# SmoothStack
+![SmoothStack Learn](/assets/images/Smoothstack_-_Sub_Brand_Logo_Learn_Option_3A.png)
 ### Assignment Repository For Training
 #### Folders include
 * Java Basics 1
