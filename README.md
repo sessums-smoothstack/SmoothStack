@@ -19,3 +19,6 @@
     * Line.java
     * LineTest.java (adding tests later)
     * Singleton.java (slide example not finished)
+* Java_Basics_5
+    * JavaBasics_Day5.docx
+    * LambdasFunctionalInterfacesStreamsAndDates.java
