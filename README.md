@@ -22,3 +22,11 @@
 * Java_Basics_5
     * JavaBasics_Day5.docx
     * LambdasFunctionalInterfacesStreamsAndDates.java
+* Week1_Assignment
+    * Q1Tests
+    * Q1.java
+    * Q2.java
+    * Q3.java
+    * Q4.java
+    * Q5.java (Not Finished)
+    * Q6.java
