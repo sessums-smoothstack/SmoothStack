@@ -21,7 +21,7 @@
     * **[Singleton.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_4/Singleton.java)** (slide example)
 * **[Java_Basics_5](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_5/)**
     * JavaBasics_Day5.docx
-    * **[LambdasFunctionalInterfacesStreamsAndDates.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_4/LambdasFunctionalInterfacesStreamsAndDates.java)**
+    * **[LambdasFunctionalInterfacesStreamsAndDates.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_5/LambdasFunctionalInterfacesStreamsAndDates.java)**
 * **[Week1_Assignment](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Week1_Assignment/)**
     * **[Q1Tests](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Week1_Assignment/Q1Tests/)**
     * **[Q1.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Week1_Assignment/Q1.java)**
