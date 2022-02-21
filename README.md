@@ -28,5 +28,5 @@
     * **[Q2.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Week1_Assignment/Q2.java)**
     * **[Q3.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Week1_Assignment/Q3.java)**
     * **[Q4.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Week1_Assignment/Q4.java)**
-    * Q5.java (Not Finished)
+    * **[Q5.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Week1_Assignment/Q5.java)**
     * **[Q6.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Week1_Assignment/Q6.java)**
