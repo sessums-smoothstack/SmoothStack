@@ -18,7 +18,7 @@
     * junit-platform-console-standalone-1.7.0-M1.jar (Version I'm using)
     * **[Line.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_4/Line.java)**
     * **[LineTest.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_4/LineTest.java)**
-    * **[Singleton.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_4/Singleton.java)** (slide example)
+    * **[Singleton.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_4/SingletonUse.java)** (slide example)
 * **[Java_Basics_5](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_5/)**
     * JavaBasics_Day5.docx
     * **[LambdasFunctionalInterfacesStreamsAndDates.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_5/LambdasFunctionalInterfacesStreamsAndDates.java)**
