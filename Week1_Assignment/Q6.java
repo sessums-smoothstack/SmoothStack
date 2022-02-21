@@ -1,7 +1,7 @@
 /*
     SmoothStacks
 
-    name: Q5.java
+    name: Q6.java
     contributor: Sam Sessums
     description:
 
