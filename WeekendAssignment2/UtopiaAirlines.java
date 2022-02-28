@@ -134,7 +134,11 @@ public class UtopiaAirlines {
         catch(Exception e){
             System.out.println(e);
         }
-        
+        finally{
+            if (con != null){
+                con.close();
+            }
+        }
     }
     
 }

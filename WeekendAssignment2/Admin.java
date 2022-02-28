@@ -55,7 +55,10 @@ public class Admin {
     public static void UpdateFlights(Flight oldFlight, Flight newFlight) throws SQLException{
         try{
             con.setAutoCommit(false);
-            PreparedStatement stmt = con.prepareStatement("update utopia_airlines.flights set flight_id = ?,  origin_iata =  ?, origin_city = ?, destination_iata = ?, destination_city = ?, depart_time = ?, reserved_seats = ?, seat_price = ? WHERE flight_id = ? and origin_iata =  ? and origin_city = ? and destination_iata = ? and destination_city = ? and depart_time = ? and reserved_seats = ? and seat_price = ?");
+            PreparedStatement stmt = con.prepareStatement("update utopia_airlines.flights set flight_id = ?, origin_iata =  ?, origin_city = ?, destination_iata = ?, destination_city = ?, depart_time = ?, reserved_seats = ?, seat_price = ? WHERE flight_id = ?");
+
+            //not sure why this isn't working with the update, but for now we have to move on
+            //and origin_iata =  ? and origin_city = ? and destination_iata = ? and destination_city = ? and depart_time = ? and reserved_seats = ? and seat_price = ?
 
             stmt.setInt(1, newFlight.flight_id);
             stmt.setString(2, newFlight.origin.iata_id);
@@ -67,6 +70,9 @@ public class Admin {
             stmt.setDouble(8, newFlight.seat_price);
 
             stmt.setInt(9, oldFlight.flight_id);
+
+            //Only try to use if the above uncommented query is added to prepared statement
+            /*
             stmt.setString(10, oldFlight.origin.iata_id);
             stmt.setString(11, oldFlight.origin.city);
             stmt.setString(12, oldFlight.destination.iata_id);
@@ -74,7 +80,7 @@ public class Admin {
             stmt.setString(14, oldFlight.depart_time);
             stmt.setInt(15, oldFlight.reserved_seats);
             stmt.setDouble(16, oldFlight.seat_price);
-
+            */
             stmt.executeUpdate();
 
             con.commit();
@@ -174,7 +180,7 @@ public class Admin {
     public static void DeleteAirports(Airport airport)throws SQLException{
         try{
             con.setAutoCommit(false);
-            PreparedStatement stmt = con.prepareStatement("delete utopia_airlines.airports (iata_id, city) where iata_id =  ? and city = ?");
+            PreparedStatement stmt = con.prepareStatement("delete from utopia_airlines.airports where iata_id =  ? and city = ?");
             stmt.setString(1, airport.iata_id);
             stmt.setString(2, airport.city);
             stmt.executeUpdate();
@@ -236,12 +242,12 @@ public class Admin {
 
             PreparedStatement stmt = con.prepareStatement("update utopia_airlines.passengers set id = ?, booking_id = ?, full_name =  ? where id = ? and booking_id = ? and full_name = ?");
             stmt.setInt(1, newPassenger.id);
-            stmt.setInt(1, newPassenger.booking_id);
-            stmt.setString(2, newPassenger.full_name);
+            stmt.setInt(2, newPassenger.booking_id);
+            stmt.setString(3, newPassenger.full_name);
 
             stmt.setInt(4, oldPassenger.id);
-            stmt.setInt(3, oldPassenger.booking_id);
-            stmt.setString(4, oldPassenger.full_name);
+            stmt.setInt(5, oldPassenger.booking_id);
+            stmt.setString(6, oldPassenger.full_name);
 
             stmt.executeUpdate();
             con.commit();
@@ -1093,7 +1099,7 @@ public class Admin {
                     sc.nextLine();
                     System.out.println();
                     if (input >= 1 && input <= flights.size()){
-                        Flight updateFlight = flights.get(input-1);
+                        Flight oldFlight = flights.get(input-1);
                         System.out.print("Enter flight id: ");
                         Integer f_id = sc.nextInt();
                         sc.nextLine();
@@ -1116,7 +1122,7 @@ public class Admin {
                         
                         Flight newFlight = new Flight(f_id, new Airport(o_iata, o_city), new Airport(d_iata, d_city), time, seats, price);
 
-                        UpdateFlights(updateFlight, newFlight);
+                        UpdateFlights(oldFlight, newFlight);
                         quit = true;
                     }
 
@@ -1254,13 +1260,14 @@ public class Admin {
                         System.out.print("Enter seats to change to: ");
                         input = sc.nextInt();
                         sc.nextLine();
-
+                        
                         Flight newFlight = new Flight(oldFlight.flight_id, oldFlight.origin, oldFlight.destination, oldFlight.depart_time, input, oldFlight.seat_price);
                         UpdateFlights(oldFlight, newFlight);
+                        input = 1;
                         quit = true;
                     }
                     else{
-                        System.out.println("Try Again");
+                        System.out.println("Try Again\n");
                     }
                 }
 
@@ -1310,7 +1317,7 @@ public class Admin {
                     quit = true;
                 }
                 else{
-                    System.out.println("Try Again!");
+                    System.out.println("Try Again!\n");
                 }
             }while(!quit);
         }
@@ -1403,7 +1410,7 @@ public class Admin {
                                     System.out.print("Enter booking_id: ");
                                     Integer booking_id = sc.nextInt();
                                     sc.nextLine();
-                                    System.out.print("Enter full_name");
+                                    System.out.print("Enter full_name: ");
                                     String full_name = sc.nextLine();
                                     Passenger newPassenger = new Passenger(id, booking_id, full_name);
                                     UpdatePassengers(oldPassenger, newPassenger);
@@ -1548,7 +1555,7 @@ public class Admin {
                         break;
 
                     case 3:
-                        DELETEFLIGHTS();
+                        DELETEAIRPORTS();
                         break;
 
                     case 4:
@@ -1658,7 +1665,8 @@ public class Admin {
                     DeleteAirports(airport);
                 }
                 else{
-                    System.out.println("Try Again!");                }
+                    System.out.println("Try Again!");
+                }
             }
 
 
