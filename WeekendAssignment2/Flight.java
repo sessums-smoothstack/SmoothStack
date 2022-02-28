@@ -19,7 +19,7 @@ public class Flight{
     
     @Override
     public String toString() {
-        return String.format("id:%d  %s -> %s @%s for $%f with %d seats available", flight_id, origin.toString(), destination.toString(), depart_time, seat_price, reserved_seats);
+        return String.format("id:%d  %s -> %s @%s for $%.2f with %d seats available", flight_id, origin.toString(), destination.toString(), depart_time, seat_price, reserved_seats);
     }
 
     public String toStringConsumer(){

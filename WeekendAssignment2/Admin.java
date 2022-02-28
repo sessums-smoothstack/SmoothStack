@@ -88,14 +88,15 @@ public class Admin {
     public static void DeleteFlights(Flight flight) throws SQLException{
         try{
             con.setAutoCommit(false);
-            PreparedStatement stmt = con.prepareStatement("delete utopia_airlines.flights (origin_iata, origin_city, destination_iata, destination_city, depart_time, reserved_seats, seat_price) where origin_iata =  ?, origin_city = ?, destination_iata = ?, destination_city = ?, depart_time = ?, reserved_seats = ?, seat_price = ? ");
-            stmt.setString(1, flight.origin.iata_id);
-            stmt.setString(2, flight.origin.city);
-            stmt.setString(3, flight.destination.iata_id);
-            stmt.setString(4, flight.destination.city);
-            stmt.setString(5, flight.depart_time);
-            stmt.setInt(6, flight.reserved_seats);
-            stmt.setDouble(7, flight.seat_price);
+            PreparedStatement stmt = con.prepareStatement("delete from utopia_airlines.flights where flight_id = ? and origin_iata = ? and origin_city = ? and destination_iata = ? and destination_city = ? and depart_time = ? and reserved_seats = ? and seat_price = ? ");
+            stmt.setInt(1, flight.flight_id);
+            stmt.setString(2, flight.origin.iata_id);
+            stmt.setString(3, flight.origin.city);
+            stmt.setString(4, flight.destination.iata_id);
+            stmt.setString(5, flight.destination.city);
+            stmt.setString(6, flight.depart_time);
+            stmt.setInt(7, flight.reserved_seats);
+            stmt.setDouble(8, flight.seat_price);
             stmt.executeUpdate();
             con.commit();
         }
@@ -200,7 +201,6 @@ public class Admin {
                 String iata = rs.getString(1);
                 String city = rs.getString(2);
                 Airport a = new Airport(iata, city);
-                System.out.println(a.iata_id);
                 airports.add(a);
             }
         }
@@ -551,8 +551,16 @@ public class Admin {
                                         time = AddTime();
                                     }
                                     dateTime = date.atTime(time);
-                                    java.util.Random rand = new java.util.Random();
-                                    Flight flight = new Flight(rand.nextInt(10000), origin, destination, dateTime.toString(), 150, 75.75);
+                                    System.out.print("Enter Flight ID: ");
+                                    Integer flight_id = sc.nextInt();
+                                    sc.nextLine();
+                                    System.out.print("Enter Reserved Seats: ");
+                                    Integer reserved_seats = sc.nextInt();
+                                    sc.nextLine();
+                                    System.out.print("Enter Price: ");
+                                    Double seat_price = sc.nextDouble();
+                                    sc.nextLine();
+                                    Flight flight = new Flight(flight_id, origin, destination, dateTime.toString(), reserved_seats, seat_price);
                                     AddFlights(flight);
                                     quit = true;
 
@@ -567,8 +575,16 @@ public class Admin {
                                         time = AddTime();
                                     }
                                     dateTime = date.atTime(time);
-                                    java.util.Random rand = new java.util.Random();
-                                    Flight flight = new Flight(rand.nextInt(10000), origin, destination, dateTime.toString(), 150, 75.75);
+                                    System.out.print("Enter Flight ID: ");
+                                    Integer flight_id = sc.nextInt();
+                                    sc.nextLine();
+                                    System.out.print("Enter Reserved Seats: ");
+                                    Integer reserved_seats = sc.nextInt();
+                                    sc.nextLine();
+                                    System.out.print("Enter Price: ");
+                                    Double seat_price = sc.nextDouble();
+                                    sc.nextLine();
+                                    Flight flight = new Flight(flight_id, origin, destination, dateTime.toString(), reserved_seats, seat_price);
                                     AddFlights(flight);
                                     quit = true;
                                 }
@@ -591,8 +607,16 @@ public class Admin {
                                     time = AddTime();
                                 }
                                 dateTime = date.atTime(time);
-                                java.util.Random rand = new java.util.Random();
-                                Flight flight = new Flight(rand.nextInt(10000), origin, destination, dateTime.toString(), 150, 75.75);
+                                System.out.print("Enter Flight ID: ");
+                                Integer flight_id = sc.nextInt();
+                                sc.nextLine();
+                                System.out.print("Enter Reserved Seats: ");
+                                Integer reserved_seats = sc.nextInt();
+                                sc.nextLine();
+                                System.out.print("Enter Price: ");
+                                Double seat_price = sc.nextDouble();
+                                sc.nextLine();
+                                Flight flight = new Flight(flight_id, origin, destination, dateTime.toString(), reserved_seats, seat_price);
                                 AddFlights(flight);    
                                 quit = true;
 
@@ -607,8 +631,16 @@ public class Admin {
                                     time = AddTime();
                                 }
                                 dateTime = date.atTime(time);
-                                java.util.Random rand = new java.util.Random();
-                                Flight flight = new Flight(rand.nextInt(10000), origin, destination, dateTime.toString(), 150, 75.75);
+                                System.out.print("Enter Flight ID: ");
+                                Integer flight_id = sc.nextInt();
+                                sc.nextLine();
+                                System.out.print("Enter Reserved Seats: ");
+                                Integer reserved_seats = sc.nextInt();
+                                sc.nextLine();
+                                System.out.print("Enter Price: ");
+                                Double seat_price = sc.nextDouble();
+                                sc.nextLine();
+                                Flight flight = new Flight(flight_id, origin, destination, dateTime.toString(), reserved_seats, seat_price);
                                 AddFlights(flight);
                                 quit = true;
                             }
@@ -639,8 +671,16 @@ public class Admin {
                                     time = AddTime();
                                 }
                                 dateTime = date.atTime(time);
-                                java.util.Random rand = new java.util.Random();
-                                Flight flight = new Flight(rand.nextInt(10000), origin, destination, dateTime.toString(), 150, 75.75);
+                                System.out.print("Enter Flight ID: ");
+                                Integer flight_id = sc.nextInt();
+                                sc.nextLine();
+                                System.out.print("Enter Reserved Seats: ");
+                                Integer reserved_seats = sc.nextInt();
+                                sc.nextLine();
+                                System.out.print("Enter Price: ");
+                                Double seat_price = sc.nextDouble();
+                                sc.nextLine();
+                                Flight flight = new Flight(flight_id, origin, destination, dateTime.toString(), reserved_seats, seat_price);
                                 AddFlights(flight);    
                                 quit = true;
                             }
@@ -668,8 +708,16 @@ public class Admin {
                                 time = AddTime();
                             }
                             dateTime = date.atTime(time);
-                            java.util.Random rand = new java.util.Random();
-                            Flight flight = new Flight(rand.nextInt(10000), origin, destination, dateTime.toString(), 150, 75.75);
+                            System.out.print("Enter Flight ID: ");
+                            Integer flight_id = sc.nextInt();
+                            sc.nextLine();
+                            System.out.print("Enter Reserved Seats: ");
+                            Integer reserved_seats = sc.nextInt();
+                            sc.nextLine();
+                            System.out.print("Enter Price: ");
+                            Double seat_price = sc.nextDouble();
+                            sc.nextLine();
+                            Flight flight = new Flight(flight_id, origin, destination, dateTime.toString(), reserved_seats, seat_price);
                             AddFlights(flight);
                             quit = true;
                         }
@@ -866,7 +914,7 @@ public class Admin {
                             else{
                                 // Broken
                                 //System.out.println("here");
-                                date = now.plusDays(daysPassed-dateInput+1);
+                                date = now.plusDays(daysPassed + dateInput-1);
                                 System.out.println(date.toString());
                                 quit = true;
                             }
@@ -1408,7 +1456,7 @@ public class Admin {
                                 if (input >= 1 && input <= passengers.size()){
                                     Passenger passenger = passengers.get(input - 1);
                                     DeletePassenger(passenger);
-                                    // update flight
+                                    // update flight_ logs not implemented
                                     quit = true;
                                 }
                                 else{
