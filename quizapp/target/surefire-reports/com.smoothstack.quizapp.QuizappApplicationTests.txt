@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: com.smoothstack.quizapp.QuizappApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.233 s <<< FAILURE! - in com.smoothstack.quizapp.QuizappApplicationTests
+contextLoads  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Invalid mapping on handler class [com.smoothstack.quizapp.controllers.QuizController]: public void com.smoothstack.quizapp.controllers.QuizController.getQuizById(com.smoothstack.quizapp.entities.Quiz)
+Caused by: java.lang.IllegalStateException: Invalid mapping on handler class [com.smoothstack.quizapp.controllers.QuizController]: public void com.smoothstack.quizapp.controllers.QuizController.getQuizById(com.smoothstack.quizapp.entities.Quiz)
+Caused by: org.springframework.web.util.pattern.PatternParseException: Missing preceding open capture character before variable name{
+
