@@ -10,6 +10,7 @@ import org.springframework.batch.core.configuration.annotation.EnableBatchProces
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepScope;
+import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.FlatFileParseException;
 import org.springframework.batch.item.file.LineMapper;
@@ -20,6 +21,8 @@ import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
 import org.springframework.batch.item.json.JacksonJsonObjectMarshaller;
 import org.springframework.batch.item.json.JsonFileItemWriter;
 import org.springframework.batch.item.json.builder.JsonFileItemWriterBuilder;
+import org.springframework.batch.item.support.SynchronizedItemStreamReader;
+import org.springframework.batch.item.support.builder.SynchronizedItemStreamReaderBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -29,6 +32,7 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.task.SimpleAsyncTaskExecutor;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 @EnableBatchProcessing
 @Configuration
@@ -46,6 +50,26 @@ public class BatchConfig {
 
     @Autowired
     StepListener stepListener;
+
+    @Bean
+    public Step multi_thread_step() {
+        ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
+        threadPoolTaskExecutor.setCorePoolSize(500);
+        threadPoolTaskExecutor.setQueueCapacity(500);
+        threadPoolTaskExecutor.setMaxPoolSize(500);
+        threadPoolTaskExecutor.setThreadNamePrefix("csvtojsonThread");
+        threadPoolTaskExecutor.afterPropertiesSet();
+
+        return steps.get("transactionStep")
+                .<Transaction, Transaction>chunk(200)
+                .reader(reader())
+                .faultTolerant()
+                .skipPolicy(new ItemSkipPolicy())
+                .skip(FlatFileParseException.class)
+                .writer(writer())
+                .taskExecutor(threadPoolTaskExecutor)
+                .build();
+    }
 
 
     @Bean
@@ -80,7 +104,7 @@ public class BatchConfig {
 
 
     @Bean
-    public Step transactionStep(TaskExecutor taskExecutor){
+    public Step transactionStep(){
         return steps.get("transactionStep")
                 .<Transaction, Transaction>chunk(200)
                 .reader(reader())
@@ -88,7 +112,6 @@ public class BatchConfig {
                 .skipPolicy(new ItemSkipPolicy())
                 .skip(FlatFileParseException.class)
                 .writer(writer())
-                .taskExecutor(taskExecutor)
                 .build();
     }
 
@@ -96,7 +119,11 @@ public class BatchConfig {
     @Bean
     public Job transactionCsvOutFileJob(){
         return jobs.get("transactionJsonOutFileJob")
-                .start(transactionStep(taskExecutor()))
+                //.start(transactionStep(taskExecutor()))
+                .incrementer(new RunIdIncrementer())
+                //.start(transactionStep())
+                //.next(multi_thread_step())
+                .start(multi_thread_step())
                 .build();
     }
 
