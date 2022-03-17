@@ -26,6 +26,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.task.SimpleAsyncTaskExecutor;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 
 @EnableBatchProcessing
@@ -71,9 +73,14 @@ public class BatchConfig {
                 .build();
     }
 
+    @Bean
+    public TaskExecutor taskExecutor() {
+        return new SimpleAsyncTaskExecutor("csvtojson");
+    }
+
 
     @Bean
-    public Step transactionStep(){
+    public Step transactionStep(TaskExecutor taskExecutor){
         return steps.get("transactionStep")
                 .<Transaction, Transaction>chunk(200)
                 .reader(reader())
@@ -81,6 +88,7 @@ public class BatchConfig {
                 .skipPolicy(new ItemSkipPolicy())
                 .skip(FlatFileParseException.class)
                 .writer(writer())
+                .taskExecutor(taskExecutor)
                 .build();
     }
 
@@ -88,7 +96,7 @@ public class BatchConfig {
     @Bean
     public Job transactionCsvOutFileJob(){
         return jobs.get("transactionJsonOutFileJob")
-                .start(transactionStep())
+                .start(transactionStep(taskExecutor()))
                 .build();
     }
 
