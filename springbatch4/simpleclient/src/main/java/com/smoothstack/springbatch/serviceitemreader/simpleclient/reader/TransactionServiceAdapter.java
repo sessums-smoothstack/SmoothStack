@@ -21,7 +21,7 @@ public class TransactionServiceAdapter implements InitializingBean {
         this.transactions = service.getTransactions();
     }
 
-    public Transaction nextProduct(){
+    public Transaction nextTransaction(){
         if ( transactions.size() >0){
             return transactions.remove(0);
         }else

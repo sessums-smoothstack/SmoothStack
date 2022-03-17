@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class TransactionService {
     public ArrayList<Transaction> getTransactions(){
         RestTemplate restTemplate = new RestTemplate();
-        String url="http://localhost:8070/transaction";
+        String url="http://localhost:8070/transactions";
         Transaction[] transactions = restTemplate.getForObject(url, Transaction[].class);
         ArrayList<Transaction> transactionList = new ArrayList<Transaction>();
         for( Transaction t : transactions)

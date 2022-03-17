@@ -69,7 +69,7 @@ public class BatchConfiguration {
     public ItemReaderAdapter serviceItemReader(){
         ItemReaderAdapter reader = new ItemReaderAdapter();
         reader.setTargetObject(transactionServiceAdapter);
-        reader.setTargetMethod("nextProduct");
+        reader.setTargetMethod("nextTransaction");
         return reader;
     }
 

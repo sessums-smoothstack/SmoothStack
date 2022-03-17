@@ -97,8 +97,8 @@ public class BatchConfiguration {
         System.out.println("ENTER CONFIG");
         LocalContainerEntityManagerFactoryBean em
                 = new LocalContainerEntityManagerFactoryBean();
-        em.setDataSource(dataSource());
-        em.setPackagesToScan(new String[] { "com.smoothstack.springbatch.hibernateitemwriter" });
+        em.setDataSource(dataSource1());
+        em.setPackagesToScan(new String[] { "com.smoothstack.JpaHibernateItemWriter" });
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
@@ -108,15 +108,13 @@ public class BatchConfiguration {
     }
 
     @Bean
-    public DataSource dataSource() {
+    public DataSource dataSource1() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUsername("sam");
         dataSource.setPassword("3301");
-        dataSource.setUrl(
-                "jdbc:mysql://localhost:3306/transactions_pool2?createDatabaseIfNotExist=true");
-
+        dataSource.setUrl("jdbc:mysql://localhost:3306/transactions_pool2?createDatabaseIfNotExist=true");
         return dataSource;
     }
 
