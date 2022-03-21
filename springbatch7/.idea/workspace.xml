@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5556cd98-06a3-4224-a1e0-a333eaf7cbce" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="faebf3a2-745c-4be8-8146-ad699f6a0f40" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../springbatch8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springbatch8/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +15,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="26UiDRCy21OuecZIyKZ2FGkfjgz" />
+  <component name="ProjectId" id="26WeRjWRrzo5uIGqBTfzJyjQDgG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -24,28 +24,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../springbatch8" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5556cd98-06a3-4224-a1e0-a333eaf7cbce" name="Changes" comment="" />
-      <created>1647484445855</created>
+      <changelist id="faebf3a2-745c-4be8-8146-ad699f6a0f40" name="Changes" comment="" />
+      <created>1647543763319</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1647484445855</updated>
+      <updated>1647543763319</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
