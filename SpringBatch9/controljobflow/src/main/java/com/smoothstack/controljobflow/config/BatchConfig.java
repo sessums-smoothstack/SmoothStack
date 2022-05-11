@@ -56,7 +56,7 @@ public class BatchConfig {
                 .build();
     }
 
-    @Bean
+/*    @Bean
     public Job job2() {
         return jobsFactory.get("job2")
                 .start(flow())
@@ -64,7 +64,7 @@ public class BatchConfig {
                 .from(flow()).on("FAILED").to(itemFailStep())
                 .end()
                 .build();
-    }
+    }*/
 
 
     @Bean
@@ -109,6 +109,7 @@ public class BatchConfig {
                 .tasklet(new ReaderTasklet())
                 .build();
     }
+
 
     @Bean
     public Step processStep() {

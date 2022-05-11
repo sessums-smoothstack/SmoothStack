@@ -11,12 +11,9 @@ public class Transaction implements Serializable {
 
     private String county;
 
-    
     private String area;
-
     
     private String number;
-
     
     private String ttl_area;
 

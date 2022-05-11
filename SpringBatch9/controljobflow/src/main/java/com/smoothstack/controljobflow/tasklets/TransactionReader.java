@@ -22,10 +22,11 @@ public class TransactionReader implements Tasklet, StepExecutionListener {
 
     private List<Transaction> transactions;
     private FileUtils fu;
+    private Transaction transaction;
 
     @Override
     public void beforeStep(StepExecution stepExecution) {
-        transactions = new ArrayList<>();
+//        transactions = new ArrayList<>();
         fu = new FileUtils(
                 "src/main/resources/files/input/transactions.csv");
         logger.debug("Lines Reader initialized.");
@@ -34,12 +35,17 @@ public class TransactionReader implements Tasklet, StepExecutionListener {
     @Override
     public RepeatStatus execute(StepContribution stepContribution,
                                 ChunkContext chunkContext) throws Exception {
-        Transaction transaction = fu.readLine();
-        while (transaction != null) {
+        transaction = fu.readLine();
+        logger.info(transaction.toString());
+        //Transaction transaction = fu.readLine();
+        /*if(transaction == null) {
+            return RepeatStatus.FINISHED;
+        }*/
+        /*while (transaction != null) {
             transactions.add(transaction);
             logger.debug("Read line: " + transaction.toString());
             transaction = fu.readLine();
-        }
+        }*/
         return RepeatStatus.FINISHED;
     }
 
@@ -49,7 +55,7 @@ public class TransactionReader implements Tasklet, StepExecutionListener {
         stepExecution
                 .getJobExecution()
                 .getExecutionContext()
-                .put("transactions", this.transactions);
+                .put("transactions", this.transaction);
         logger.debug("Lines Reader ended.");
         return ExitStatus.COMPLETED;
     }
