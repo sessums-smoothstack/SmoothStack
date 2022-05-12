@@ -1,32 +1,50 @@
-# SmoothStack
-### Assignment Repository For Training
-#### Folders include
-* **[Java Basics 1](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java%20Basics%201/)**
-    * **[assignment_1.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java%20Basics%201/assignment_1.java)**
-    * **[assignment_2.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java%20Basics%201/assignment_2.java)**
-* **[Java Basics 2](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java%20Basics%202)**
-    * **[Array2D.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java%20Basics%202/Array2D.java)**
-    * **[Shapes.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java%20Basics%202/Shapes.java)**
-    * **[SumDoubles.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java%20Basics%202/SumDoubles.java)**
+# SmoothStack: Assignment Repository
+These are assignments for training received at SmoothStack. This repository <br>
+consists of Java Basics to more advanced topics to using the Spring Framework <br>
+such as using Spring Boot, Spring Security and Spring Batch. You will find a ReadMe <br>
+in each sub-directory outlining the assignments and their usages
+
+## Table of Contents
+* [Sub-Directories](#sub-directories)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
+
+## Sub-Directories
+* **[Java_Basics_1](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_1/)**
+* **[Java_Basics_2](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_2)**
 * **[Java_Basics_3](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java%20Basics%203/)**
-    * **[FileAppend.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_3/FileAppend.java)**
-    * **[LetterSearch.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_3/LetterSearch.java)**
-    * **[ListFiles.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_3/ListFiles.java)**
 * **[Java_Basics_4](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_4/)**
-    * **[ConsumerProducerDriver.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_4/ConsumerProducerDriver.java)** (Kinda Broken)
-    * **[DeadLock.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_4/DeadLock.java)**
-    * junit-platform-console-standalone-1.7.0-M1.jar (Version I'm using)
-    * **[Line.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_4/Line.java)**
-    * **[LineTest.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_4/LineTest.java)**
-    * **[Singleton.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_4/SingletonUse.java)** (slide example)
 * **[Java_Basics_5](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_5/)**
-    * JavaBasics_Day5.docx
-    * **[LambdasFunctionalInterfacesStreamsAndDates.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Java_Basics_5/LambdasFunctionalInterfacesStreamsAndDates.java)**
-* **[Week1_Assignment](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Week1_Assignment/)**
-    * **[Q1Tests](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Week1_Assignment/Q1Tests/)**
-    * **[Q1.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Week1_Assignment/Q1.java)**
-    * **[Q2.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Week1_Assignment/Q2.java)**
-    * **[Q3.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Week1_Assignment/Q3.java)**
-    * **[Q4.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Week1_Assignment/Q4.java)**
-    * **[Q5.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Week1_Assignment/Q5.java)**
-    * **[Q6.java](https://github.com/sessums-smoothstack/SmoothStack/blob/main/Week1_Assignment/Q6.java)**
+* **[WeekendAssignment1](https://github.com/sessums-smoothstack/SmoothStack/blob/main/WeekendAssignment1/)**
+* **[WeekendAssignment2](https://github.com/sessums-smoothstack/SmoothStack/tree/main/WeekendAssignment2/)**
+* **[JdbcCursorItemReader](https://github.com/sessums-smoothstack/SmoothStack/tree/main/JdbcCursorItemReader)**
+* **[SpringBatch9](https://github.com/sessums-smoothstack/SmoothStack/tree/main/SpringBatch9)**
+* **[SpringBatchLearningAssignments](https://github.com/sessums-smoothstack/SmoothStack/tree/main/SpringBatchLearningAssignments)**
+* **[quizapp](https://github.com/sessums-smoothstack/SmoothStack/tree/main/quizapp)**
+* **[springbatch2](https://github.com/sessums-smoothstack/SmoothStack/tree/main/springbatch2)**
+* **[springbatch4](https://github.com/sessums-smoothstack/SmoothStack/tree/main/springbatch4)**
+* **[springbatch5](https://github.com/sessums-smoothstack/SmoothStack/tree/main/springbatch5)**
+* **[springbatch6](https://github.com/sessums-smoothstack/SmoothStack/tree/main/springbatch6)**
+* **[springbatch7](https://github.com/sessums-smoothstack/SmoothStack/tree/main/springbatch7)**
+* **[springbatch8](https://github.com/sessums-smoothstack/SmoothStack/tree/main/springbatch8)**
+* **[JDBCDemo](https://github.com/sessums-smoothstack/SmoothStack/tree/main/JDBCDemo)**
+
+## Usage
+See each sub-directory for exact use.
+
+## Credits
+* JDK 8 - 17
+* Spring Framework
+  * Spring Boot
+  * Spring Security
+  * Spring Batch
+  * Spring Data JPA
+* H2 DataBase
+* MySql
+* 
+  
+
+
+## License
+Copyright © 2022 Samuel B. Sessums
