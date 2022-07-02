@@ -9,7 +9,7 @@ import FunButtonTwo from "./components/fun_buttons/FunButtonTwo";
 function App() {
   return (
     <div className="App">
-        <Navbar></Navbar>
+        <Navbar/>
         <div className={"flex-row col-sm-12 justify-content-center"}>
             <Card title={"Some Different Timezones"} text={"See these different timezones"}/>
         </div>
